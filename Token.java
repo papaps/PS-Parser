@@ -114,9 +114,5 @@ public class Token{
     @Override
     public String toString(){
         return this.tokenType.toString();
-//        if (this.tokenType.toString().equals("NUM"))
-//            return this.tokenType.toString();
-//        else
-//            return this.lexeme;
     }
 }
