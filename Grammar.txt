@@ -1,0 +1,23 @@
+S
+    : T E
+    ;
+
+E
+    : ADD T E
+    | epsilon
+    ;
+
+T
+    : F U
+    ;
+
+U
+    : MUL F U
+    | epsilon
+    ;
+
+F
+    : LPAREN S RPAREN
+    | LBRACK S RBRACK
+    | NUM
+    ;
