@@ -90,7 +90,7 @@ public class Parser {
                         return " - REJECT. Offending token '('";
                 } else if (Token.offendingOpeningBracket(stack.peek()).equals("[")) {
                     return " - REJECT. Offending token '['";
-                } else if (Token.checkTokenType(stack.peek())) {
+                } else {
                     rule_index ++;
                     performBacktrack(stack, backstack, current_r);
                 }
