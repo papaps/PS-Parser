@@ -86,15 +86,13 @@ public class Parser {
                     } else {
                         return " - REJECT. Offending token '" + tokenList.get(pointer-1).getLexeme() + "'";
                     }
-                } else if (stack.peek().equals("ADD") || stack.peek().equals("MUL") || stack.peek().equals("LBRACK") || stack.peek().equals("LPAREN") || stack.peek().equals("NUM")) {
+                } else if (Token.offendingOpeningBracket(stack.peek()).equals("(")) {
+                        return " - REJECT. Offending token '('";
+                } else if (Token.offendingOpeningBracket(stack.peek()).equals("[")) {
+                    return " - REJECT. Offending token '['";
+                } else if (Token.checkTokenType(stack.peek())) {
                     rule_index ++;
                     performBacktrack(stack, backstack, current_r);
-                } else {
-                    if (stack.peek().equals("RPAREN")) {
-                        return " - REJECT. Offending token '('";
-                    } else if (stack.peek().equals("RBRACK")) {
-                        return " - REJECT. Offending token '['";
-                    }
                 }
             }
 

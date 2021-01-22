@@ -94,6 +94,23 @@ public class Token{
     public String getTokenType() {return tokenType.toString();}
     public String getLexeme() {return lexeme;}
 
+    public static boolean checkTokenType(String type) {
+        for (TokenType token: TokenType.values()) {
+            if (token.toString().equals(type))
+                return true;
+        }
+        return false;
+    }
+
+    public static String offendingOpeningBracket(String type) {
+        if (type.equals(TokenType.RPAREN.toString())){
+            return "(";
+        } else if (type.equals(TokenType.RBRACK.toString())){
+            return "[";
+        }
+        return "";
+    }
+
     @Override
     public String toString(){
         return this.tokenType.toString();

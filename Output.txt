@@ -1,4 +1,4 @@
-1 + 10 - ACCEPT
+[1 + 10 - REJECT. Offending token '['
 1 * 10 * 10 + 4 + (6 + 12345) - ACCEPT
 [1 + 10] = 11 - REJECT. Offending token '='
 1 + + 10 * 5 * 4 * 3 + 2 * 1 = = - REJECT. Offending token '+'
